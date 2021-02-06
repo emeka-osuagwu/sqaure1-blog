@@ -14,5 +14,14 @@ class PostService
 	public function getAll() {
 		return Post::all();
     }
+
+	/*
+	|--------------------------------------------------------------------------
+	| Add Comment
+	|--------------------------------------------------------------------------
+	*/
+	public function findWhere($field, $value) {
+		return Post::where($field, $value);
+    }
     
 }
