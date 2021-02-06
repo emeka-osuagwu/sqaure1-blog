@@ -20,5 +20,5 @@ Route::group(['prefix' => '/post'], function () {
 });
 
 Route::group(['prefix' => '/user'], function () {
-    Route::get('post', 'UserController@getUserPost');
+    Route::get('post', 'UserController@getUserPost')->middleware('authenticated');
 });
