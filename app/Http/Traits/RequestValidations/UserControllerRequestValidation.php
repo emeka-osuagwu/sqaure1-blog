@@ -16,7 +16,6 @@ trait UserControllerRequestValidation
 	{
 		$validator = Validator::make($data, [
 			'email' => 'required_if:section,email|email|exists:users,email',
-			'username' => 'required_if:section,username|string|exists:users,username',
 			'password' => 'required|string',
 		]);
 
