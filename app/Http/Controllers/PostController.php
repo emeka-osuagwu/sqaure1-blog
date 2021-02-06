@@ -78,4 +78,35 @@ class PostController extends Controller
         
         return $this->sendResponse($post, "Post", 200, 1000);
     }
+    
+    /*
+	|--------------------------------------------------------------------------
+	| Add Comment
+	|--------------------------------------------------------------------------
+	*/
+    public function create(Request $request)
+    {
+        $request['user_id'] = 1;
+
+        /*
+		|--------------------------------------------------------------------------
+		| Add Comment
+		|--------------------------------------------------------------------------
+		*/
+		$validator = $this->createPost($request->all());
+
+		/*
+		|--------------------------------------------------------------------------
+		| Add Comment
+		|--------------------------------------------------------------------------
+		*/
+		if($validator->fails()) 
+		{	
+			return $this->sendResponse($validator->errors(), "Validation error", 400, 1002);
+        }
+
+        $post = $this->postService->findWhere('id', $id)->get()->first();
+        
+        return $this->sendResponse($post, "Post", 200, 1000);
+    }
 }

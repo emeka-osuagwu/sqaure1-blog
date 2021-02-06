@@ -6,7 +6,6 @@ use Validator;
 
 trait PostControllerRequestValidation
 {
-
 	/*
 	|--------------------------------------------------------------------------
 	| Add Comment
@@ -21,4 +20,19 @@ trait PostControllerRequestValidation
 		return $validator;
     }
     
+	/*
+	|--------------------------------------------------------------------------
+	| Add Comment
+	|--------------------------------------------------------------------------
+	*/
+	public function createPost($data)
+	{
+		$validator = Validator::make($data, [
+			'title' => 'required|string',
+            'user_id' => 'required|integer|exists:users,id',
+			'description' => 'required|string',
+		]);
+
+		return $validator;
+    }
 }

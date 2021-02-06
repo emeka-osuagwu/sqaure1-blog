@@ -23,5 +23,14 @@ class PostService
 	public function findWhere($field, $value) {
 		return Post::where($field, $value);
     }
+
+	/*
+	|--------------------------------------------------------------------------
+	| Add Comment
+	|--------------------------------------------------------------------------
+	*/
+	public function create($data) {
+		return Post::create($data);
+    }
     
 }
