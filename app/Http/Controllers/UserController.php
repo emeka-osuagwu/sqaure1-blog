@@ -7,8 +7,9 @@ use App\Http\Traits\ResponseTrait;
 use App\Http\Traits\RequestValidations\PostControllerRequestValidation;
 
 use App\Http\Services\PostService;
+use App\Http\Services\UserService;
 
-class PostController extends Controller
+class UserController extends Controller
 {
     /*
 	|--------------------------------------------------------------------------
@@ -29,14 +30,23 @@ class PostController extends Controller
 	| Add Comment
 	|--------------------------------------------------------------------------
 	*/
+    protected $userService;
+    
+    /*
+	|--------------------------------------------------------------------------
+	| Add Comment
+	|--------------------------------------------------------------------------
+	*/
 	protected $postService;
 
 	public function __construct
 	(
+		UserService $userService,
 		PostService $postService
 	)
 	{
 		$this->postService = $postService;
+		$this->userService = $userService;
 		parent::__construct();
     }
     
@@ -117,5 +127,43 @@ class PostController extends Controller
         
         return $this->sendResponse($post, "Post", 200, 1000);
     }
+    
+    /*
+	|--------------------------------------------------------------------------
+	| Add Comment
+	|--------------------------------------------------------------------------
+	*/
+    public function getUserPost(Request $request)
+    {
+        $request['user_id'] = 1;
 
+        /*
+		|--------------------------------------------------------------------------
+		| Add Comment
+		|--------------------------------------------------------------------------
+		*/
+		$validator = $this->createPost($request->all());
+
+		/*
+		|--------------------------------------------------------------------------
+		| Add Comment
+		|--------------------------------------------------------------------------
+		*/
+		if($validator->fails()) 
+		{	
+			return $this->sendResponse($validator->errors(), "Validation error", 400, 1002);
+        }
+
+        $request_data = $request->only([
+            'title',
+            'user_id',
+            'description',
+        ]);
+        
+        $request_data['publication_date'] = now();
+ 
+        $post = $this->postService->create($request_data);
+        
+        return $this->sendResponse($post, "Post", 200, 1000);
+    }
 }
