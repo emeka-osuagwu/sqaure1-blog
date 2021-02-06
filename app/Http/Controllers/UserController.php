@@ -92,7 +92,42 @@ class UserController extends Controller
 		|--------------------------------------------------------------------------
 		*/
 		return $this->sendResponse($token, "User login succsesfull", 200, 1000);
+    }
+    
+    /*
+	|--------------------------------------------------------------------------
+	| Add Comment
+	|--------------------------------------------------------------------------
+	*/
+	public function register(Request $request)
+	{
+	    /*
+		|--------------------------------------------------------------------------
+		| Add Comment
+		|--------------------------------------------------------------------------
+		*/
+		$validator = $this->createUserValidation($request->all());
+
+		/*
+		|--------------------------------------------------------------------------
+		| Add Comment
+		|--------------------------------------------------------------------------
+		*/
+		if ($validator->fails()) 
+		{	
+			return $this->sendResponse($validator->errors(), "Registration validation error", 400, 1001);
+		}
+		
+		/*
+		|--------------------------------------------------------------------------
+		| Add Comment
+		|--------------------------------------------------------------------------
+		*/
+		$user = $this->userService->create($request->all('password', 'name', 'email'));
+
+		return $this->sendResponse([], "User created", 200, 1000);
 	}
+
     
     /*
 	|--------------------------------------------------------------------------
@@ -101,14 +136,14 @@ class UserController extends Controller
 	*/
     public function getUserPost(Request $request)
     {
-        $request['user_id'] = 1;
+        $request['user_id'] = $request->auth_user->id;
 
         /*
 		|--------------------------------------------------------------------------
 		| Add Comment
 		|--------------------------------------------------------------------------
 		*/
-		$validator = $this->createPost($request->all());
+		$validator = $this->findUserValidation($request->all());
 
 		/*
 		|--------------------------------------------------------------------------
@@ -120,16 +155,13 @@ class UserController extends Controller
 			return $this->sendResponse($validator->errors(), "Validation error", 400, 1002);
         }
 
-        $request_data = $request->only([
-            'title',
-            'user_id',
-            'description',
-        ]);
+		/*
+		|--------------------------------------------------------------------------
+		| Add Comment
+		|--------------------------------------------------------------------------
+		*/
+        $posts = $this->postService->findWhere('user_id', $request->user_id)->get();
         
-        $request_data['publication_date'] = now();
- 
-        $post = $this->postService->create($request_data);
-        
-        return $this->sendResponse($post, "Post", 200, 1000);
+        return $this->sendResponse($posts, "Post", 200, 1000);
     }
 }
