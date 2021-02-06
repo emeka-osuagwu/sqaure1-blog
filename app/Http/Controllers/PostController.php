@@ -105,7 +105,15 @@ class PostController extends Controller
 			return $this->sendResponse($validator->errors(), "Validation error", 400, 1002);
         }
 
-        $post = $this->postService->findWhere('id', $id)->get()->first();
+        $request_data = $request->only([
+            'title',
+            'user_id',
+            'description',
+        ]);
+        
+        $request_data['publication_date'] = now();
+ 
+        $post = $this->postService->create($request_data);
         
         return $this->sendResponse($post, "Post", 200, 1000);
     }
