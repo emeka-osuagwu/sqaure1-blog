@@ -7,6 +7,7 @@ import RegisterComponent from './components/RegisterComponent.vue'
 import CreatePostComponent from './components/CreatePostComponent.vue'
 import ProfileComponent from './components/ProfileComponent.vue'
 
+
 Vue.use(Router)
 
 export default new Router({
