@@ -12,7 +12,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="post in appStore.userPost" :key="post.id">
-                            <th scope="row">1</th>
+                            <th scope="row">#</th>
                             <td>{{post.title}}</td>
                             <td>{{post.publication_date}}</td>
                         </tr>
