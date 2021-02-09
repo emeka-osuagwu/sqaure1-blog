@@ -38,7 +38,4 @@ My goal is to show my understand of `PHP | Laravel | Vuejs` and how to put togth
 - cd into folder and run ```yarn install``` or ```npm install```
 - run ``` yarn dev ``` or ```npm run dev``` to start the app
 
-#### Step 2 -> setup your env file:
-
-
 # Thanks
