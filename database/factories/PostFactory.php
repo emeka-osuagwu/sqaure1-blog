@@ -25,7 +25,7 @@ class PostFactory extends Factory
         return [
             'user_id' => 1,
             'title' => $this->faker->name,
-            'description' => $this->faker->unique()->safeEmail,
+            'description' => $this->faker->text(500),
             'publication_date' => now(),
         ];
     }
