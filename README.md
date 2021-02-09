@@ -7,6 +7,9 @@ Create a simple blogging platform that allows users create and ready post, and i
 ### Goals
 My goal is to show my understand of `PHP | Laravel | Vuejs` and how to put togther with `API's` and the `Client` side
 
+#### Simple Architecture
+![alt text](https://res.cloudinary.com/arm/image/upload/v1612849887/Untitled_Diagram_ncokfa.png)
+
  #### Design parttens used
  - Repository parttens
  - Service parttens
@@ -19,7 +22,6 @@ My goal is to show my understand of `PHP | Laravel | Vuejs` and how to put togth
 - Json REST API response
 - Command Line developer tool
 - Vuex
-
 
 #### Step 1 -> clone and startup the app:
 
