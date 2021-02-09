@@ -1,7 +1,7 @@
 <template>
     <div class="login-bod">
         <main class="form-signin" style="max-width: 830px;">
-            <label for="basic-url" class="form-label">Fliter by Month | Year</label>
+            <label for="basic-url" class="form-label">Fliter by Month Publication</label>
             <div class="input-group mb-3">
                 <input type="date" v-model="search" class="form-control" id="basic-url" aria-describedby="basic-addon3">
             </div>
