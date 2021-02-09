@@ -30,8 +30,7 @@ My goal is to show my understand of `PHP | Laravel | Vuejs` and how to put togth
 - run ``` php artisan serve ``` to start the app
 
 ##### Import Post
-- run ```php artisan import:post``` or run ``` * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1 ```
-
+- run ```php artisan import:post``` or run ``` * * * * * cd /path-to-your-project && php artisan import:post >> /dev/null 2>&1 ```
 
 ##### Frontend Setup
 - cd into folder and run ```yarn install``` or ```npm install```
