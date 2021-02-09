@@ -26,7 +26,7 @@ My goal is to show my understand of `PHP | Laravel | Vuejs` and how to put togth
 ##### API Setup
 - run ```git clone https://github.com/emeka-osuagwu/sqaure1-blog``` to clone
 - cd into folder and run ```composer install```
-- create your ```.env```, you can see example of this in the ```.env.example file```
+- create your ```.env```, you can see example of this in the ```.env.example``` file
 - run ``` php artisan serve ``` to start the app
 
 ##### Import Post
