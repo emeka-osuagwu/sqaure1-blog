@@ -1,11 +1,12 @@
-## Sqaure1 Blog Service
+## Sqaure1 Blogging platform Service
 
 
 ### Summary
-Create basic registration process for wunder customers 
+Create a simple blogging platform that allows users create and ready post, and import blog article from 3rd sites.
 
 ### Goals
-My goal is to show my understand of `PHP` and how to put togther a min framework to build any application
+My goal is to show my understand of `PHP | Laravel | Vuejs` and how to put togther with `API's` and the `Client` side
+
  #### Design parttens used
  - Repository parttens
  - Service parttens
@@ -13,8 +14,10 @@ My goal is to show my understand of `PHP` and how to put togther a min framework
 
 ### Features
 - Request Validation
+- Laravel Eloquent Relationships
 - Json REST API response
 - Command Line developer tool
+- Vuex
 
 
 #### Step 1 -> clone and startup the app:
