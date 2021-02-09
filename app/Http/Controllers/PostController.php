@@ -86,7 +86,7 @@ class PostController extends Controller
 	*/
     public function create(Request $request)
     {
-        $request['user_id'] = 1;
+        $request['user_id'] = $request->auth_user->id;
 
         /*
 		|--------------------------------------------------------------------------

@@ -62,6 +62,6 @@ class DatabaseSeeder extends Seeder
         | Add Comment
         |--------------------------------------------------------------------------
         */
-        \App\Models\Post::factory(10)->create();
+        \App\Models\Post::factory(1)->create();
     }
 }

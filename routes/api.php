@@ -11,8 +11,8 @@ Route::group(['prefix' => '/'], function () {
 
 Route::group(['prefix' => '/post'], function () {
     Route::get('/', 'PostController@get');
-    Route::post('/', 'PostController@create');
-    Route::get('{id}', 'PostController@find');
+    Route::post('/', 'PostController@create')->middleware('authenticated');
+    Route::get('{id}', 'PostController@find')->middleware('authenticated');
 });
 
 Route::group(['prefix' => '/user'], function () {

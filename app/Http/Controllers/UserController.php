@@ -90,8 +90,13 @@ class UserController extends Controller
 		|--------------------------------------------------------------------------
 		| Add Comment
 		|--------------------------------------------------------------------------
-		*/
-		return $this->sendResponse($token, "User login succsesfull", 200, 1000);
+        */
+        
+        $response_data = [
+            'user' => $this->userService->findWhere('email', $request->email)->get()->first(),
+            'token' => $token
+        ];
+		return $this->sendResponse($response_data, "User login succsesfull", 200, 1000);
     }
     
     /*

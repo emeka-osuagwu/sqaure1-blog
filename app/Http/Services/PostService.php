@@ -12,7 +12,7 @@ class PostService
 	|--------------------------------------------------------------------------
 	*/
 	public function getAll() {
-		return Post::all();
+		return Post::with('user')->latest()->get();
     }
 
 	/*
