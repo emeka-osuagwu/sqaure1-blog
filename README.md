@@ -30,10 +30,10 @@ My goal is to show my understand of `PHP | Laravel | Vuejs` and how to put togth
 - run ``` php artisan serve ``` to start the app
 
 ##### Import Post
-- run ```php artisan import:post``` to clone
-- cd into folder and run ```composer install```
-- create your ```.env```, you can see example of this in the ```.env.example file```
-- run ``` php artisan serve ``` to start the app
+- run ```php artisan import:post```
+or
+- run ``` * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1 ```
+
 
 
 ##### Frontend Setup
