@@ -29,6 +29,12 @@ My goal is to show my understand of `PHP | Laravel | Vuejs` and how to put togth
 - create your ```.env```, you can see example of this in the ```.env.example file```
 - run ``` php artisan serve ``` to start the app
 
+##### Import Post
+- run ```php artisan import:post``` to clone
+- cd into folder and run ```composer install```
+- create your ```.env```, you can see example of this in the ```.env.example file```
+- run ``` php artisan serve ``` to start the app
+
 
 ##### Frontend Setup
 - cd into folder and run ```yarn install``` or ```npm install```
