@@ -53,15 +53,8 @@
             filteredEvents: function() {
             return this.appStore.userPost
             .filter(post => {
-                console.log(moment(post.publication_date).format('MMMM YYYY'))
-                console.log(moment(this.search).format('MMMM YYYY'))
                 return moment(post.publication_date).format('MMMM YYYY').includes(moment(this.search).format('MMMM YYYY'));
             })
-            .sort(function(a, b) {
-                // Turn your strings into dates, and then subtract them
-                // to get a value that is either negative, positive, or zero.
-                return new Date(b.startDate) - new Date(a.startDate);
-            });
   }
 
             
