@@ -52,6 +52,9 @@
                     }
 
                     this.$store.dispatch('createPost', data)
+
+                    this.title = ""
+                    this.description = ""
                 }
             }
             
